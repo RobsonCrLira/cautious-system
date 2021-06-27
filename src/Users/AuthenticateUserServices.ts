@@ -1,5 +1,5 @@
 import { sign } from "jsonwebtoken";
-import authConfig from "../config/authConfig";
+import authConfig from "@config/authConfig";
 import data from "../fixtures/users.json";
 import { IUserLogin } from "./IUserLogin";
 
