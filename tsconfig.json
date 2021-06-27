@@ -23,5 +23,11 @@
         "src/interface/*"
       ]
     }
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -1,6 +1,8 @@
-import config from "./config/config";
+import dotenv from "dotenv";
 import { app } from "./app";
 
-app.listen(config.isProduction, () =>
-  console.log(`🔥 Server is running || port = ${config.isProduction}`)
+dotenv.config();
+
+app.listen(process.env.PORT, () =>
+  console.log("Server is running " + process.env.PORT)
 );

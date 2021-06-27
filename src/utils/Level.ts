@@ -1,4 +1,3 @@
-//Refatorar
 function Level(
   roles: string,
   organizationLevel: number,
