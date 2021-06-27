@@ -2,28 +2,12 @@ import { sign } from "jsonwebtoken";
 import authConfig from "../config/authConfig";
 import data from "../fixtures/users.json";
 import { IUserLogin } from "./IUserLogin";
-import { IUserResponse } from "./IUserResponse";
 
 class AuthenticateUserServices {
   async execute({ email, password }: IUserLogin) {
-    //Refatorar
-    let userFind: IUserResponse;
+    const userFind = data.filter((data) => data.email === email);
 
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].email === email) {
-        userFind = data[i];
-        break;
-      }
-    }
-
-    // const userFind = data.filter((dados, index) => {
-    //   if (dados.email === email) {
-    //     return dados[index];
-    //   }
-    //   return [];
-    // });
-
-    const user = userFind;
+    const [user] = userFind;
 
     if (!user) {
       throw new Error("Email/Password Incorrect !");
@@ -35,10 +19,12 @@ class AuthenticateUserServices {
       throw new Error("Email/Password Incorrect !");
     }
 
+    const [rolesString] = user.roles;
+
     const token = sign(
       {
         email: user.email,
-        roles: user.roles,
+        roles: rolesString,
       },
       authConfig.secret,
       {

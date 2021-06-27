@@ -1,16 +1,26 @@
-import readFile from "fs/readFile";
-
+import { Level } from "../utils/Level";
+import dataOrganization from "../fixtures/organization.json";
+import dataUser from "../fixtures/users.json";
+import { importProductToFile } from "./ImportProductsToFile";
 class ListProductServices {
-  async execute(name: string) {
-    const product = "../fixtures/product.txt";
+  async execute(organizationName: string, userId: string, roles: string) {
+    const [organization] = dataOrganization.filter(
+      (data) => data.name === organizationName
+    );
 
-    // console.log(product);
-    // const productJson = JSON.stringify(dataText);
+    if (!organization) {
+      throw new Error("Incorrect name!");
+    }
 
-    const dados = readFile(product, "utf-8", function (err, data) {
-      console.log(data);
-    });
-    return dados;
+    const [user] = dataUser.filter((data) => data.userId === userId);
+
+    if (!Level(roles, organization.level, organizationName)) {
+      throw new Error("Não Authorized!");
+    }
+
+    const products = importProductToFile(organization);
+
+    return products;
   }
 }
 export { ListProductServices };
