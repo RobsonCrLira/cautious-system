@@ -1,7 +1,9 @@
-import { Level } from "../utils/Level";
 import dataOrganization from "../fixtures/organization.json";
 import dataUser from "../fixtures/users.json";
+import { Level } from "../utils/Level";
+
 import { importProductToFile } from "./ImportProductsToFile";
+
 class ListProductServices {
   async execute(organizationName: string, userId: string, roles: string) {
     const [organization] = dataOrganization.filter(

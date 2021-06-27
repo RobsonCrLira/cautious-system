@@ -1,7 +1,8 @@
-import authConfig from "../config/authConfig";
 import { IPayload } from "@interface/IPayload";
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
+
+import authConfig from "../config/authConfig";
 
 export function ensureAuthenticate(
   request: Request,

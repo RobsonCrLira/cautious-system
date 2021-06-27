@@ -4,11 +4,12 @@ function Level(
   organizationName: string
 ): boolean {
   if (roles === "junior" && organizationLevel === 2) {
-    console.log(organizationLevel + "jr");
+    console.log(`${organizationLevel}jr`);
     return true;
-  } else if (roles === "middle") {
+  }
+  if (roles === "middle") {
     if (organizationLevel === 1 || organizationLevel === 2) {
-      console.log(organizationLevel + "m");
+      console.log(`${organizationLevel}m`);
       return true;
     }
   } else if (roles === "senior") {
@@ -17,7 +18,7 @@ function Level(
       organizationLevel === 1 ||
       organizationLevel === 2
     ) {
-      console.log(organizationLevel + "s");
+      console.log(`${organizationLevel}s`);
       return true;
     }
   } else if (roles === "intern") {
@@ -26,7 +27,7 @@ function Level(
       organizationLevel === 1 ||
       organizationLevel === 2
     ) {
-      console.log(organizationLevel + "a");
+      console.log(`${organizationLevel}a`);
       return true;
     }
   }

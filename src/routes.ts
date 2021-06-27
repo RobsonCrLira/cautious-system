@@ -1,7 +1,8 @@
 import { Router } from "express";
+
 import { ensureAuthenticate } from "./middleware/ensureAuthenticate";
-import { AuthenticateUsersController } from "./users/AuthenticateUsersController";
 import { ListProductAllController } from "./products/ListProductAllController";
+import { AuthenticateUsersController } from "./users/AuthenticateUsersController";
 
 const routes = Router();
 const listProduct = new ListProductAllController();

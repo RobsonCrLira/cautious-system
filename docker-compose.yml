@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  api:
+    image: node:14-alpine
+    container_name: list-products
+    restart: always
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
+    ports:
+      - ${PORT}:${PORT}
+    command: yarn dev

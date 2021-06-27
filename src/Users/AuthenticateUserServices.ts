@@ -1,6 +1,8 @@
-import { sign } from "jsonwebtoken";
 import authConfig from "@config/authConfig";
+import { sign } from "jsonwebtoken";
+
 import data from "../fixtures/users.json";
+
 import { IUserLogin } from "./IUserLogin";
 
 class AuthenticateUserServices {
