@@ -1,11 +1,11 @@
 import { Router } from "express";
 import { ensureAuthenticate } from "./middleware/ensureAuthenticate";
-import { ListProductAllController } from "./products/ListProductAllController";
 import { AuthenticateUsersController } from "./users/AuthenticateUsersController";
+import { ListProductAllController } from "./products/ListProductAllController";
 
 const routes = Router();
-const authenticateUserController = new AuthenticateUsersController();
 const listProduct = new ListProductAllController();
+const authenticateUserController = new AuthenticateUsersController();
 
 routes.post("/login", authenticateUserController.handle);
 routes.get(
