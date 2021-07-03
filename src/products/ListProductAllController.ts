@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
-import { ListProductServices } from "./ListProductService";
+import { ListProductServices } from './ListProductService';
 
 class ListProductAllController {
   async handle(request: Request, response: Response) {
@@ -11,7 +11,7 @@ class ListProductAllController {
     const products = await listProductServices.execute(
       organizationName,
       userId,
-      roles
+      roles,
     );
 
     return response.json(products);

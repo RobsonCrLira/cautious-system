@@ -1,10 +1,11 @@
 {
   "env": {
-    "es2021": true,
+    "es6": true,
     "node": true
   },
   "extends": [
     "airbnb-base",
+    "airbnb-typescript",
     "prettier",
     "plugin:prettier/recommended"
   ],
@@ -19,11 +20,10 @@
   },
   "plugins": [
     "@typescript-eslint",
-    "prettier",
-    "import-helpers",
-    "eslint-plugin-import-helpers"
+    "prettier"
   ],
   "rules": {
+    "keyword-spacing": 2,
     "prettier/prettier": "error",
     "no-new": "off",
     "import/no-unresolved": "off",
@@ -32,63 +32,15 @@
     "no-await-in-loop": "off",
     "no-console": "off",
     "camelcase": "off",
-    "@typescript-eslint/ban-types": "warn",
-    "import/prefer-default-export": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "ts": "never"
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "**/*.spec.ts",
-          "src/utils/tests/*.ts"
-        ]
-      }
-    ],
-    "no-useless-constructor": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "warn",
-      {
-        "argsIgnorePattern": "_"
-      }
-    ],
-    "@typescript-eslint/no-useless-constructor": "error",
-    "@typescript-eslint/camelcase": "off",
-    "import-helpers/order-imports": [
-      "warn",
-      {
-        "newlinesBetween": "always",
-        "alphabetize": {
-          "order": "asc",
-          "ignoreCase": true
-        }
-      }
-    ]
+    "@typescript-eslint/ban-types": "warn"
   },
-  "overrides": [
-    {
-      "files": [
-        "*.js"
-      ],
-      "rules": {
-        "@typescript-eslint/no-var-requires": "off"
-      }
-    }
-  ],
   "settings": {
     "import/extensions": [
-      ".ts",
-      ".js"
+      ".ts"
     ],
     "import/parsers": {
       "@typescript-eslint/parser": [
-        ".ts",
-        ".js"
+        ".ts"
       ]
     },
     "import/resolver": {

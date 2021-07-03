@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 
-import { AuthenticateUserServices } from "./AuthenticateUserServices";
+import { AuthenticateUserServices } from './AuthenticateUserServices';
 
 class AuthenticateUsersController {
   async handle(request: Request, response: Response) {

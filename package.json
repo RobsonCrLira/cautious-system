@@ -9,7 +9,7 @@
     "build": "tsc",
     "dev": "ts-node-dev -r tsconfig-paths/register --ignore-watch node_modules src/server.ts",
     "start": "node dist/server.js",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+    "lint": "eslint \"**/*.ts\" --fix"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
@@ -20,16 +20,16 @@
   "devDependencies": {
     "@types/express": "^4.17.12",
     "@types/jsonwebtoken": "^8.5.2",
-    "@typescript-eslint/eslint-plugin": "^4.28.0",
-    "@typescript-eslint/parser": "^4.28.0",
-    "eslint": "^7.29.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "jest": "^27.0.5",
-    "prettier": "^2.3.1",
+    "prettier": "^2.3.2",
     "ts-jest": "^27.0.3",
     "ts-node-dev": "^1.1.6",
     "tsconfig-paths": "^3.9.0",

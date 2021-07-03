@@ -1,9 +1,9 @@
-import authConfig from "@config/authConfig";
-import { sign } from "jsonwebtoken";
+import { sign } from 'jsonwebtoken';
 
-import data from "../fixtures/users.json";
+import authConfig from '@config/authConfig';
 
-import { IUserLogin } from "./IUserLogin";
+import data from '../fixtures/users.json';
+import { IUserLogin } from './IUserLogin';
 
 class AuthenticateUserServices {
   async execute({ email, password }: IUserLogin) {
@@ -12,13 +12,13 @@ class AuthenticateUserServices {
     const [user] = userFind;
 
     if (!user) {
-      throw new Error("Email/Password Incorrect !");
+      throw new Error('Email/Password Incorrect !');
     }
 
     const passwordMatch = user.password === password;
 
     if (!passwordMatch) {
-      throw new Error("Email/Password Incorrect !");
+      throw new Error('Email/Password Incorrect !');
     }
 
     const [rolesString] = user.roles;
@@ -32,7 +32,7 @@ class AuthenticateUserServices {
       {
         subject: user.userId,
         expiresIn: authConfig.tokenExpiryTimeInSeconds,
-      }
+      },
     );
 
     return token;
