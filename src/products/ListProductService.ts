@@ -1,6 +1,7 @@
 import dataOrganization from '../fixtures/organization.json';
 import dataUser from '../fixtures/users.json';
 import { Level } from '../utils/Level';
+
 import { importProductToFile } from './ImportProductsToFile';
 
 class ListProductServices {
@@ -15,7 +16,7 @@ class ListProductServices {
 
     const [user] = dataUser.filter((data) => data.userId === userId);
 
-    if (!Level(roles, organization.level, organizationName)) {
+    if (!Level(roles, organization.level)) {
       throw new Error('Não Authorized!');
     }
 

@@ -1,8 +1,4 @@
-function Level(
-  roles: string,
-  organizationLevel: number,
-  organizationName: string,
-): boolean {
+function Level(roles: string, organizationLevel: number): boolean {
   if (roles === 'junior' && organizationLevel === 2) {
     console.log(`${organizationLevel}jr`);
     return true;

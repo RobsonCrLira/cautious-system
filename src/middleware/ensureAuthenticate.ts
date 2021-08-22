@@ -1,7 +1,6 @@
+import { IPayload } from '@interface/IPayload';
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
-
-import { IPayload } from '@interface/IPayload';
 
 import authConfig from '../config/authConfig';
 

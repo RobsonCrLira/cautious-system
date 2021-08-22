@@ -1,24 +1,25 @@
-import { sign } from 'jsonwebtoken';
-
 import authConfig from '@config/authConfig';
+import { sign } from 'jsonwebtoken';
+import { AppError } from 'src/errors/AppError';
 
-import data from '../fixtures/users.json';
+import users from '../fixtures/users.json';
+
 import { IUserLogin } from './IUserLogin';
 
 class AuthenticateUserServices {
   async execute({ email, password }: IUserLogin) {
-    const userFind = data.filter((data) => data.email === email);
+    const userFind = users.filter((data) => data.email === email);
 
     const [user] = userFind;
 
     if (!user) {
-      throw new Error('Email/Password Incorrect !');
+      throw new AppError('Email/Password Incorrect !');
     }
 
     const passwordMatch = user.password === password;
 
     if (!passwordMatch) {
-      throw new Error('Email/Password Incorrect !');
+      throw new AppError('Email/Password Incorrect !');
     }
 
     const [rolesString] = user.roles;

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 import express, { NextFunction, Request, Response } from 'express';
 
 import 'express-async-errors';
